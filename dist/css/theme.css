@@ -47,6 +47,10 @@ button {
   font-family: 'Roboto', sans-serif;
 }
 
+ul {
+  margin-bottom: 16px;
+}
+
 /* Header */
 header {
   display: flex;
