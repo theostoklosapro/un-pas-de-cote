@@ -20,11 +20,27 @@ h1 {
 .btn-blue {
   background-color: #275DAD;
   color: #fff;
+  transition: all 0.3s ease;
+  border: 1px solid #275DAD;
+}
+
+.btn-blue:hover {
+  background-color: #fff;
+  color: #275DAD;
+  border-color: #275DAD;
 }
 
 .btn-white {
+  border: 1px solid #fff;
   background-color: #fff;
   color: #275DAD;
+  transition: all 0.3s ease;
+}
+
+.btn-white:hover {
+  background-color: #275DAD;
+  color: #fff;
+  border-color: #fff;
 }
 
 img {
@@ -97,6 +113,7 @@ header {
     gap: 16px;
     color: #275DAD;
     align-items: center;
+    list-style: none;
   }
 
   /* Hero section */
@@ -125,17 +142,14 @@ header {
     height: 100%;
   }
 
-  /* Section quand et pourquoi  */
-  .section-when-and-why {
+  /* Section qui sommes-nous */
+  .about-us {
     flex-direction: row;
-    gap: 64px;
-    justify-content: center;
-    padding-top: 64px;
-    padding-bottom: 64px;
   }
 
-  .section-when-and-why > .img-container {
-    width: 40%;
+  .about-us .when-and-why {
+    padding: 32px;
+    margin-top: 64px;
   }
 
   /* Section objectifs */

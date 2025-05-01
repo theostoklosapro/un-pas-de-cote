@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Un Pas de Côté accompagne les familles à travers le coaching parental et familial. Avec une approche bienveillante et personnalisée, nous aidons à renforcer les liens, gérer les défis du quotidien et retrouver un équilibre serein.">
+  <link rel="shortcut icon" href="public/assets/img/favicon.png" type="image/png">
   <link rel="stylesheet" href="./dist/css/theme-mobile.css">
   <link rel="stylesheet" href="./dist/css/theme.css">
   <link rel="stylesheet" href="./dist/css/reset.css">
@@ -13,11 +14,11 @@
   <div class="body-backdrop"></div>
   <header class="container">
     <div class="logo-container">
-      <img src="public/assets/img/logo.svg" alt="Logo Un pas de côté">
+      <img src="public/assets/img/logo.png" alt="Logo Un pas de côté">
     </div>
     <div id="menu-desktop">
       <ul>
-        <li><a href="#when-and-why">Quand et pourquoi ?</a></li>
+        <li><a href="#about-us">Qui sommes-nous ?</a></li>
         <li><a href="#targets">Objectifs</a></li>
         <li><a href="#what-is-systemic-approach">Approche systémique</a></li>
         <li><a href="#contact" class="btn btn-blue">Nous contacter</a></li>
@@ -61,28 +62,37 @@
       </div>
     </section>
 
-    <section id="when-and-why" class="section-when-and-why container">
+    <section id="about-us" class="about-us container">
       <div>
-        <h2>Quand et pourquoi faire appel à nous ?</h2>
-        <p>Notre but est de vous accompagner tout en apprenant à renouer des liens solides</p>
-        <h3>Vous accompagner</h3>
-        <ul>
-          <li>Accompagner le couple ou la famille en crise</li>
-          <li>Accompagner l’évolution de chacun dans le couple ou la famille</li>
-          <li>Accompagner l’évolution de chacun</li>
-          <li>Retrouver un équilibre</li>
-          <li>Travailler autour du fonctionnement familial</li>
-          <li>Accompagner les étapes de l’évolution de vie des enfants</li>
-        </ul>
-        <h3>Renouer avec la communication</h3>
-        <ul>
-          <li>Apprendre à communiquer de manière apaisée</li>
-          <li>Réapprendre à se parler, à s’écouter, à se comprendre, à entendre l’autre différemment</li>
-          <li>Favoriser l’expression et l’écoute de chacun des partenaires ou des membres de la famille</li>
-          <li>Exprimer ses insatisfactions par rapport à la relation et non par rapport à l’autre.</li>
-          <li>Apprendre à mieux communiquer entre les différents membres de la famille</li>
-          <li>Apprendre à gérer les conflits</li>
-        </ul>
+        <h2>Qui sommes-nous ?</h2>
+        <p>
+          Éducateurs spécialisés depuis 25 ans, formés à l'approche systémique, nous avons à cœur d'accompagner les familles,
+          les couples et les parents dans leurs difficultés.
+          Notre travail en binôme propose un regard différent, afin de faire émerger vos propres solutions.
+        </p>
+        <div class="when-and-why">
+          <h3>Quand et pourquoi faire appel à nous ?</h3>
+          <p>Notre but est de vous accompagner tout en apprenant à renouer des liens solides</p>
+          <h4>Vous accompagner</h4>
+          <ul>
+            <li>Accompagner le couple ou la famille en crise</li>
+            <li>Accompagner l’évolution de chacun dans le couple ou la famille</li>
+            <li>Accompagner l’évolution de chacun</li>
+            <li>Retrouver un équilibre</li>
+            <li>Travailler autour du fonctionnement familial</li>
+            <li>Accompagner les étapes de l’évolution de vie des enfants</li>
+          </ul>
+          <h4>Renouer avec la communication</h4>
+          <ul>
+            <li>Apprendre à communiquer de manière apaisée</li>
+            <li>Réapprendre à se parler, à s’écouter, à se comprendre, à entendre l’autre différemment</li>
+            <li>Favoriser l’expression et l’écoute de chacun des partenaires ou des membres de la famille</li>
+            <li>Exprimer ses insatisfactions par rapport à la relation et non par rapport à l’autre.</li>
+            <li>Apprendre à mieux communiquer entre les différents membres de la famille</li>
+            <li>Apprendre à gérer les conflits</li>
+          </ul>
+          <img src="public/assets/img/hands-with-hearts.svg" class="when-and-why-bg" />
+        </div>
       </div>
       <div class="img-container rounded">
         <img src="./public/assets/img/image-bureau.jpg" alt="Photo de Christelle et Thibaut en séance de coaching familial">
@@ -128,7 +138,7 @@
           Partant du postulat que chaque famille, chaque couple, chaque individu est compétent,
           notre travail consiste à faire émerger vos propres solutions.
         </p>
-        <p class="citation">« Parler de famille compétente, c’est rendre à la famille sa compétence plutôt que de considérer sesmanques. »</p>
+        <p class="citation">« Parler de famille compétente, c’est rendre à la famille sa compétence plutôt que de considérer ses manques. »</p>
         <p class="author">Guy AUSLOOS</p>
       </div>
       <div class="img-container rounded">
@@ -141,7 +151,11 @@
       <div class="section-contact-content">
         <div>
           <h3>Grâce à ce formulaire :</h3>
-          <form>
+          <form action="send_email.php" method="POST">
+            <?php
+              session_start();
+              $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+            ?>
             <div class="form-group">
               <label for="name">Nom *</label>
               <input required type="text" name="name" placeholder="Jean" />
@@ -160,16 +174,16 @@
             </div>
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea name="message" id="form-message" placeholder="Écrivez-nous"></textarea>
+              <textarea required name="message" id="form-message" placeholder="Écrivez-nous"></textarea>
             </div>
-            <input type="checkbox" name="consent" />
+            <input type="checkbox" name="consent" required />
             <label class="consent-label" for="consent">J’accepte que mes données soient collectées et utilisées conformément à la politique de confidentialité</label>
             
             <button class="btn btn-white btn-form">Valider l'envoi</button>
           </form>
         </div>
         <div>
-          <h3>Ou en nous contactant par mail ou par téléphone</h3>
+          <h3>Ou par mail ou par téléphone</h3>
           <div class="contact-mail">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             <a href="mailto:cabinetcoaching4010lux@gmail.com">cabinetcoaching4010lux@gmail.com</a>

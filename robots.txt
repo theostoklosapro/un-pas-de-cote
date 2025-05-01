@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Dossiers à protéger
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /js/
+Disallow: /css/
+Disallow: /img/
+
+# Sitemap
+Sitemap: https://www.un-pas-de-cote.fr/sitemap.xml
