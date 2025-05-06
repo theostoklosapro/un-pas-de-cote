@@ -145,6 +145,7 @@ header {
   /* Section qui sommes-nous */
   .about-us {
     flex-direction: row;
+    padding-bottom: 64px;
   }
 
   .about-us .when-and-why {
@@ -191,5 +192,15 @@ header {
   }
   .section-contact-content > div {
     width: 50%;
+  }
+
+  .mail-sent-popup {
+    width: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #consent-label {
+    cursor: pointer;
   }
 }

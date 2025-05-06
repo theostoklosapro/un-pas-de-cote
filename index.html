@@ -151,7 +151,7 @@
       <div class="section-contact-content">
         <div>
           <h3>Grâce à ce formulaire :</h3>
-          <form action="mailto:cabinetcoaching4010lux@gmail.com">
+          <form id="contact-form" method="POST" action="send-mail.php">
             <div class="form-group">
               <label for="name">Nom *</label>
               <input required type="text" name="name" placeholder="Dupont" />
@@ -161,19 +161,19 @@
               <input required type="text" name="firstname" placeholder="Jean" />
             </div>
             <div class="form-group">
-              <label for="firstname">Email</label>
+              <label for="email">Email</label>
               <input type="text" name="email" placeholder="exemple@mail.com" />
             </div>
             <div class="form-group">
-              <label for="firstname">Téléphone *</label>
-              <input required type="text" name="firstname" placeholder="06 ou 07 ..." />
+              <label for="phone">Téléphone *</label>
+              <input required type="text" name="phone" placeholder="06 ou 07 ..." />
             </div>
             <div class="form-group">
               <label for="message">Message</label>
               <textarea required name="message" id="form-message" placeholder="Écrivez-nous"></textarea>
             </div>
-            <input type="checkbox" name="consent" required />
-            <label class="consent-label" for="consent">J’accepte que mes données soient collectées et utilisées conformément à la politique de confidentialité</label>
+            <input id="consent-checkbox" type="checkbox" name="consent" required />
+            <label id="consent-label" for="consent">J’accepte que mes données soient collectées et utilisées conformément à la politique de confidentialité</label>
             
             <button class="btn btn-white btn-form">Valider l'envoi</button>
           </form>
@@ -191,6 +191,9 @@
         </div>
       </div>
     </section>
+    <div id="mail-sent-popup" class="mail-sent-popup">
+      Merci, votre message a bien été envoyé.
+    </div>
   </main>
 
   <footer>
