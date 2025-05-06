@@ -194,12 +194,6 @@ header {
     width: 50%;
   }
 
-  .mail-sent-popup {
-    width: 500px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
   #consent-label {
     cursor: pointer;
   }
