@@ -151,11 +151,7 @@
       <div class="section-contact-content">
         <div>
           <h3>Grâce à ce formulaire :</h3>
-          <form action="send_email.php" method="POST">
-            <?php
-              session_start();
-              $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-            ?>
+          <form action="mailto:cabinetcoaching4010lux@gmail.com">
             <div class="form-group">
               <label for="name">Nom *</label>
               <input required type="text" name="name" placeholder="Jean" />

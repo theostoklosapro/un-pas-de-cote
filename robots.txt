@@ -9,4 +9,4 @@ Disallow: /css/
 Disallow: /img/
 
 # Sitemap
-Sitemap: https://www.un-pas-de-cote.fr/sitemap.xml
+Sitemap: https://moncoachfamilial.com/sitemap.xml
