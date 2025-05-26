@@ -74,6 +74,7 @@ header {
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (min-width: 992px) {
@@ -106,14 +107,18 @@ header {
 
   #menu-desktop {
     display: block;
-  }
 
-  #menu-desktop ul {
-    display: flex;
-    gap: 16px;
-    color: #275DAD;
-    align-items: center;
-    list-style: none;
+    ul {
+      display: flex;
+      gap: 32px;
+      color: #275DAD;
+      align-items: center;
+      list-style: none;
+    }
+
+    .active {
+      border-bottom: 2px solid #275DAD;
+    }
   }
 
   /* Hero section */
@@ -152,6 +157,11 @@ header {
     padding: 32px;
     margin-top: 64px;
   }
+
+  .about-us .when-and-why a {
+    margin-top: 32px;
+    width: fit-content;
+  } 
 
   /* Section objectifs */
   .section-targets {
@@ -196,5 +206,19 @@ header {
 
   #consent-label {
     cursor: pointer;
+  }
+
+  /* Page coaching familial */
+  .coaching-familial-header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+  .illustration-famille {
+    width: 40%;
+    /* height: 250px; */
+    object-fit: contain;
   }
 }

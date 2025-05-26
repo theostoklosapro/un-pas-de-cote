@@ -1,0 +1,4 @@
+RewriteEngine On
+
+# Redirection de /coaching-familial vers coaching-familial.html
+RewriteRule ^coaching-familial/?$ coaching-familial.html [L]

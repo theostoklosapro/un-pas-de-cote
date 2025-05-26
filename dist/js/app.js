@@ -20,7 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
     body.classList.remove('menu-mobile-open');
   });
 
-  document.getElementById('consent-label').addEventListener('click', () => {
-    document.getElementById('consent-checkbox').checked = true;
-  });
+  if (document.getElementById('consent-label')) {
+    document.getElementById('consent-label').addEventListener('click', () => {
+      document.getElementById('consent-checkbox').checked = true;
+    });
+  }
 });
